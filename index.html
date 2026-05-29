@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Анастасия Палыга — переводчик</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      background-color: #CFCFCF;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #8a6a3a;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section {
+      padding: 70px 60px;
+    }
+
+    section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 50px;
+      letter-spacing: 1px;
+      color: #333;
+    }
+
+    /* ─── HERO SECTION ─── */
+    #glavnaya {
+      background-color: #FFFFDE;
+      text-align: center;
+      padding-top: 80px;
+      padding-bottom: 0;
+    }
+
+    #glavnaya h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    #glavnaya .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 60px;
+      letter-spacing: 1px;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      max-width: 1000px;
+      margin: 0 auto 60px auto;
+      text-align: left;
+    }
+
+    .hero-content img {
+      width: 280px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 4px;
+      background-color: #ccc;
+      flex-shrink: 0;
+    }
+
+    .hero-photo {
+      width: 280px;
+      height: 360px;
+      background-color: #d0cfc0;
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      line-height: 1.9;
+      color: #444;
+      font-weight: 400;
+    }
+
+    .hero-divider {
+      width: 10%;
+      height: 2px;
+      background-color: #aaa;
+      margin: 0 auto;
+    }
+
+    /* ─── SERVICES SECTION ─── */
+    #uslugi {
+      background-color: #ffffff;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+    }
+
+    .service-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-photo {
+      width: 280px;
+      height: 210px;
+      background-color: #ddd;
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 13px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .service-text h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .service-text p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+      font-weight: 400;
+    }
+
+    /* ─── CAROUSEL BUTTONS ─── */
+    .carousel-btn {
+      background-color: #e8e8e8;
+      border: none;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .carousel-btn:hover {
+      background-color: #d4d4d4;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .carousel-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: #333;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ─── COMPANIES SECTION ─── */
+    #companies {
+      background-color: #FFFFDE;
+      text-align: center;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      position: relative;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .carousel-image {
+      width: 860px;
+      max-width: 80vw;
+      aspect-ratio: 1680 / 1187;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* ─── PROJECTS SECTION ─── */
+    #primery {
+      background-color: #FFFFDE;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto 40px auto;
+    }
+
+    .project-card {
+      background-color: #ffffff;
+      border-radius: 4px;
+      padding: 30px 24px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 160px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .project-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .project-card .more-link {
+      font-size: 13px;
+      color: #8a6a3a;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .project-card .more-link:hover {
+      color: #5a3a10;
+    }
+
+    .project-card .more-link::after {
+      content: '→';
+      font-size: 15px;
+    }
+
+    .projects-note {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      font-style: normal;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── MEDIA SECTION ─── */
+    #perevody {
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .video-wrapper {
+      max-width: 700px;
+      margin: 0 auto 60px auto;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      padding-top: 56.25%;
+      position: relative;
+      background-color: #222;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .video-placeholder iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ─── INFO CARDS GRID ─── */
+    .info-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+    }
+
+    .info-card {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .info-card-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #c8c4b8;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.4s ease;
+    }
+
+    .info-card:hover .info-card-bg {
+      transform: scale(1.05);
+    }
+
+    .info-card-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .info-card:hover .info-card-overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .info-card-title {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      padding: 0 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .info-card-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .info-card:hover .info-card-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .info-card-btn:hover {
+      background: #fff;
+      color: #333;
+    }
+
+    /* ─── PHOTO CAROUSEL ─── */
+    .photo-carousel {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .photo-carousel-track {
+      display: flex;
+      gap: 16px;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      min-height: 260px;
+    }
+
+    .photo-carousel-item {
+      border-radius: 4px;
+      flex-shrink: 0;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .photo-carousel-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .photo-carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    /* ─── LIGHTBOX (photo) ─── */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+    }
+
+    .lightbox-close:hover {
+      transform: scale(1.2);
+    }
+
+    .lightbox-close svg {
+      width: 32px;
+      height: 32px;
+      stroke: #fff;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .lightbox-caption {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 20px;
+      max-width: 700px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* ─── MODAL (white popup) ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 8px;
+      padding: 50px 50px 40px 50px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+    }
+
+    .modal-close:hover {
+      transform: scale(1.2);
+    }
+
+    .modal-close svg {
+      width: 26px;
+      height: 26px;
+      stroke: #333;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .modal-content h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 24px;
+      padding-right: 40px;
+    }
+
+    .modal-content ul {
+      list-style: disc;
+      padding-left: 24px;
+    }
+
+    .modal-content ul li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .modal-content ul li a {
+      color: #8a6a3a;
+      text-decoration: none;
+    }
+
+    .modal-content ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .modal-content p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .modal-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #222;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    /* Modal thumbnails grid */
+    .modal-thumbs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .modal-thumb {
+      cursor: pointer;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .modal-thumb:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .modal-thumb img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Modal expanded image */
+    .modal-expanded-wrapper {
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .modal-expanded-wrapper.active {
+      display: block;
+    }
+
+    .modal-expanded-wrapper img {
+      max-width: 100%;
+      max-height: 60vh;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .modal-expanded-back {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #8a6a3a;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .modal-expanded-back:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── CONTACT SECTION ─── */
+    #kontakty {
+      background-color: #FFFFDE;
+      text-align: center;
+      padding: 70px 60px;
+    }
+
+    .contact-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 24px auto;
+      display: block;
+    }
+
+    #kontakty h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    #kontakty .role {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 20px;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    #kontakty .contact-info {
+      font-size: 15px;
+      color: #444;
+      line-height: 2;
+    }
+
+    #kontakty .contact-info a {
+      color: #8a6a3a;
+      text-decoration: none;
+    }
+
+    #kontakty .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background-color: #CFCFCF;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer-left span {
+      font-size: 13px;
+      color: #444;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      nav ul li a {
+        font-size: 11px;
+      }
+
+      #glavnaya h1 {
+        font-size: 32px;
+      }
+
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .service-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .carousel-image {
+        width: 100%;
+      }
+
+      .carousel-btn {
+        width: 44px;
+        height: 44px;
+      }
+
+      .carousel-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .carousel-wrapper {
+        gap: 0;
+        padding: 0 10px;
+      }
+
+      .carousel-wrapper .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .carousel-wrapper .carousel-btn:first-child {
+        left: 16px;
+      }
+
+      .carousel-wrapper .carousel-btn:last-child {
+        right: 16px;
+      }
+
+      .carousel-wrapper .carousel-image {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .photo-carousel-track {
+        min-height: 190px;
+      }
+
+      section {
+        padding: 50px 24px;
+      }
+
+      .lightbox-img {
+        max-width: 95vw;
+        max-height: 65vh;
+      }
+
+      .lightbox-caption {
+        font-size: 12px;
+        margin-top: 14px;
+        max-width: 90vw;
+      }
+
+      .modal-content {
+        padding: 40px 24px 30px 24px;
+        max-height: 90vh;
+      }
+
+      .modal-content h3 {
+        font-size: 18px;
+      }
+
+      .modal-thumbs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav>
+    <ul>
+      <li><a href="#glavnaya">Главная</a></li>
+      <li><a href="#uslugi">Услуги</a></li>
+      <li><a href="#primery">Примеры проектов</a></li>
+      <li><a href="#perevody">Мои переводы</a></li>
+      <li><a href="#kontakty">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="glavnaya">
+    <h1>Анастасия Палыга</h1>
+    <p class="subtitle">Устный переводчик RU-ENG-FR</p>
+
+    <div class="hero-content">
+      <img src="images/profile-photo.png" alt="Анастасия Палыга" class="hero-photo">
+      <div class="hero-text">
+        <p>
+          Здравствуйте! Меня зовут Анастасия Палыга, я дипломированный
+          синхронный и последовательный переводчик, работающий с русским,
+          английским и французским языками в любых комбинациях. Я выпускница
+          МГЛУ (московский ИнЯз им. Мориса Тореза) и магистратуры университета
+          Сорбонны. Работаю с любыми тематиками, одинаково люблю как
+          медицину/горное дело/сельское хозяйство, так и культуру/моду/гастрономию.
+        </p>
+      </div>
+    </div>
+
+    <div class="hero-divider"></div>
+  </section>
+
+  <!-- ─── SERVICES ─── -->
+  <section id="uslugi">
+    <h2>Услуги</h2>
+
+    <div class="service-item">
+      <img src="images/services-01-sync.jpeg" alt="Синхронный перевод" class="service-photo">
+      <div class="service-text">
+        <h3>Синхронный перевод</h3>
+        <p>
+          Осуществляется одновременно с речью выступающего. Необходимо специальное оборудование  
+          для синхронного перевода (доступно для аренды через партнёрские компании). В силу  
+          повышенной нагрузки данный вид перевода обычно выполняется двумя специалистами, которые  
+          сменяют друг друга.<br>
+          Если вам требуется несколько переводчиков, в том числе с другими/редкими языками,  
+          то с удовольствием порекомендую проверенных коллег.
+        </p>
+      </div>
+    </div>
+
+    <div class="service-item">
+      <img src="images/services-02-posled.jpeg" alt="Последовательный перевод" class="service-photo">
+      <div class="service-text">
+        <h3>Последовательный перевод</h3>
+        <p>
+          Выполняется без специального оборудования. Выступающий делает паузы, чтобы  
+          дать возможность перевести сказанное. Переводчик использует скоропись для  
+          записи продолжительных отрезков речи.<br>
+          Если ваше мероприятие предполагает несколько параллельных сессий и вам требуется  
+          несколько переводчиков, в том числе с другими/редкими языками, то с удовольствием  
+          порекомендую проверенных коллег.
+        </p>
+      </div>
+    </div>
+
+    <div class="service-item">
+      <img src="images/services-03-lingv.jpeg" alt="Организация мероприятий" class="service-photo">
+      <div class="service-text">
+        <h3>Организация мероприятий (офлайн &amp; онлайн)</h3>
+        <p>
+          Лингвистическое обеспечение: подбор проверенных переводчиков с любыми языками, в том  
+          числе редкими; техническое обеспечение через партнёрские компании; координация и  
+          модерация; при необходимости - организация регистрации, кейтеринга.  
+        </p>
+      </div>
+    </div>
+
+    <div class="service-item">
+      <img src="images/services-04-other.jpg" alt="Другие лингвистические услуги" class="service-photo">
+      <div class="service-text">
+        <h3>Другие лингвистические услуги</h3>
+        <p>
+          Письменный перевод документов, редактирование и корректура текстов, лингвистические  
+          консультации, а также обучение и наставничество для начинающих переводчиков.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COMPANIES ─── -->
+  <section id="companies">
+    <h2>Компании и организации, с которыми я работаю</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn" id="companiesPrev" aria-label="Назад">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <img src="images/companies-01.jpg" alt="Логотипы компаний" class="carousel-image" id="companiesSlide">
+      <button class="carousel-btn" id="companiesNext" aria-label="Вперёд">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section id="primery">
+    <h2>Примеры проектов</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>Медицина</h3>
+        <a class="more-link" onclick="openModal('medicine')">Подробнее</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Международные организации, крупные форумы</h3>
+        <a class="more-link" onclick="openModal('international')">Подробнее</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Бизнес, экономика, право</h3>
+        <a class="more-link" onclick="openModal('business')">Подробнее</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Сельское хозяйство, пищевая промышленность</h3>
+        <a class="more-link" onclick="openModal('agriculture')">Подробнее</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Горное дело</h3>
+        <a class="more-link" onclick="openModal('mining')">Подробнее</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Разное</h3>
+        <a class="more-link" onclick="openModal('misc')">Подробнее</a>
+      </div>
+
+    </div>
+
+    <p class="projects-note">
+      Более полная информация по опыту работы, в том числе по тематикам,
+      не упомянутым выше, — по запросу.
+    </p>
+  </section>
+
+  <!-- ─── MEDIA / MY TRANSLATIONS ─── -->
+  <section id="perevody">
+    <h2>Мой перевод на телевидении / радио / сцене</h2>
+
+    <!-- YouTube Video -->
+    <div class="video-wrapper">
+      <div class="video-placeholder">
+        <iframe
+          src="https://www.youtube.com/embed/0mOrRs3-wZc"
+          title="Перевод на телевидении"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Info Cards 2x2 -->
+    <div class="info-cards-grid">
+      <div class="info-card" style="aspect-ratio: 1280 / 739;" onclick="openModal('videos')">
+        <div class="info-card-bg" style="background-image: url('images/examples-01-videos.jpeg'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+        <div class="info-card-overlay">
+          <span class="info-card-title">Ссылки на видео с моим переводом</span>
+          <button class="info-card-btn">Подробнее</button>
+        </div>
+      </div>
+
+      <div class="info-card" style="aspect-ratio: 1280 / 739;" onclick="openModal('thanks')">
+        <div class="info-card-bg" style="background-image: url('images/examples-02-thanks.jpeg'); background-size: cover; background-position: center;"></div>
+        <div class="info-card-overlay">
+          <span class="info-card-title">Благодарности</span>
+          <button class="info-card-btn">Подробнее</button>
+        </div>
+      </div>
+
+      <div class="info-card" style="aspect-ratio: 1280 / 739;" onclick="openModal('diplomas')">
+        <div class="info-card-bg" style="background-image: url('images/examples-03-diplomas.jpeg'); background-size: cover; background-position: center;"></div>
+        <div class="info-card-overlay">
+          <span class="info-card-title">Дипломы и сертификаты</span>
+          <button class="info-card-btn">Подробнее</button>
+        </div>
+      </div>
+
+      <div class="info-card" style="aspect-ratio: 1280 / 739;" onclick="openModal('clients')">
+        <div class="info-card-bg" style="background-image: url('images/examples-04-info.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="info-card-overlay">
+          <span class="info-card-title">Информация для заказчиков</span>
+          <button class="info-card-btn">Подробнее</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Carousel -->
+    <div class="photo-carousel">
+      <div class="photo-carousel-track" id="photoTrack"></div>
+      <div class="photo-carousel-controls">
+        <button class="carousel-btn" id="photoPrev" aria-label="Назад">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="carousel-btn" id="photoNext" aria-label="Вперёд">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LIGHTBOX (photo carousel) ─── -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img src="" alt="" class="lightbox-img" id="lightboxImg">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <!-- ─── MODAL (white popup) ─── -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent">
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ─── CONTACTS ─── -->
+  <section id="kontakty">
+    <img src="images/ap-profile-photo.jpg" alt="Анастасия Палыга" class="contact-photo">
+    <h3>Анастасия Палыга</h3>
+    <p class="role">Синхронный и последовательный переводчик</p>
+    <div class="contact-info">
+      <p>📞 <a href="tel:+79175210764">+7 (917) 521 07 64</a></p>
+      <p>✉️ <a href="mailto:anastasia.palyga@gmail.com">anastasia.palyga@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-left">
+      <span>© ИП Палыга Анастасия Руслановна</span>
+      <span>ИНН 773773470813</span>
+    </div>
+  </footer>
+
+  <!-- ─── JAVASCRIPT ─── -->
+  <script>
+    // ═══════════════════════════════════════
+    // Companies carousel
+    // ═══════════════════════════════════════
+    const companySlides = [
+      'images/companies-01.jpg',
+      'images/companies-02.jpg',
+      'images/companies-03.jpg',
+    ];
+    let companyIndex = 0;
+    const companiesSlide = document.getElementById('companiesSlide');
+
+    document.getElementById('companiesNext').addEventListener('click', () => {
+      companyIndex = (companyIndex + 1) % companySlides.length;
+      companiesSlide.src = companySlides[companyIndex];
+    });
+
+    document.getElementById('companiesPrev').addEventListener('click', () => {
+      companyIndex = (companyIndex - 1 + companySlides.length) % companySlides.length;
+      companiesSlide.src = companySlides[companyIndex];
+    });
+
+    // ═══════════════════════════════════════
+    // Photo carousel — 14 real photos
+    // ═══════════════════════════════════════
+    const photoItems = [
+      { src: 'images/photos-01.jpeg', w: 1064, h: 654, caption: 'Заседание российско-французской рабочей группы по информационным технологиям, связи и сотрудничеству в области цифрового телерадиовещания под председательством заместителя министра цифрового развития, связи и массовых коммуникаций РФ М. Мамонова' },
+      { src: 'images/photos-02.jpeg', w: 565, h: 886, caption: '' },
+      { src: 'images/photos-03.jpeg', w: 1137, h: 1280, caption: 'Семинар по международным правилам проведения военных операций SWIRMO-2019, проводимый Минобороны России и Международным Комитетом Красного Креста' },
+      { src: 'images/photos-04.jpeg', w: 1040, h: 585, caption: 'Командировка на золотодобывающее предприятие в Буркина-Фасо' },
+      { src: 'images/photos-05.jpeg', w: 1152, h: 864, caption: 'Форум «Армия-2020»' },
+      { src: 'images/photos-06.jpeg', w: 1680, h: 1260, caption: 'Электрогорский научно-исследовательский центр по безопасности АЭС, осмотр испытательных стендов' },
+      { src: 'images/photos-07.jpeg', w: 571, h: 626, caption: '' },
+      { src: 'images/photos-08.jpg', w: 1680, h: 1260, caption: 'Обмен опытом между сотрудниками Росэнергоатом и EDF (Франция)' },
+      { src: 'images/photos-09.jpeg', w: 1280, h: 960, caption: '' },
+      { src: 'images/photos-10.jpeg', w: 844, h: 1152, caption: 'С Сандрой Чой (креативный директор Jimmy Choo)' },
+      { src: 'images/photos-11.jpeg', w: 1280, h: 1280, caption: 'С Фредериком Бегбедером' },
+      { src: 'images/photos-12.jpeg', w: 916, h: 864, caption: '' },
+      { src: 'images/photos-13.jpeg', w: 958, h: 1280, caption: 'IX Московская конференция по международной безопасности, июнь 2021' },
+      { src: 'images/photos-14.jpg', w: 958, h: 1280, caption: '' },
+    ];
+
+    const THUMB_HEIGHT = 220;
+    const THUMB_HEIGHT_MOBILE = 170;
+
+    function getThumbHeight() {
+      return window.innerWidth <= 768 ? THUMB_HEIGHT_MOBILE : THUMB_HEIGHT;
+    }
+
+    let photoIndex = 0;
+    const photoTrack = document.getElementById('photoTrack');
+
+    function getVisibleCount() {
+      return window.innerWidth <= 768 ? 3 : 5;
+    }
+
+    function renderPhotos() {
+      photoTrack.innerHTML = '';
+      const visiblePhotos = getVisibleCount();
+      const thumbH = getThumbHeight();
+
+      for (let i = 0; i < visiblePhotos; i++) {
+        const idx = (photoIndex + i) % photoItems.length;
+        const item = photoItems[idx];
+        const aspectRatio = item.w / item.h;
+        const thumbW = Math.round(thumbH * aspectRatio);
+
+        const div = document.createElement('div');
+        div.className = 'photo-carousel-item';
+        div.style.width = thumbW + 'px';
+        div.style.height = thumbH + 'px';
+
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.caption || 'Фото';
+        img.loading = 'lazy';
+
+        div.appendChild(img);
+        div.addEventListener('click', () => openLightbox(idx));
+        photoTrack.appendChild(div);
+      }
+    }
+
+    renderPhotos();
+
+    document.getElementById('photoNext').addEventListener('click', () => {
+      photoIndex = (photoIndex + 1) % photoItems.length;
+      renderPhotos();
+    });
+
+    document.getElementById('photoPrev').addEventListener('click', () => {
+      photoIndex = (photoIndex - 1 + photoItems.length) % photoItems.length;
+      renderPhotos();
+    });
+
+    window.addEventListener('resize', renderPhotos);
+
+    // ═══════════════════════════════════════
+    // Lightbox (photo carousel)
+    // ═══════════════════════════════════════
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(index) {
+      const item = photoItems[index];
+      lightboxImg.src = item.src;
+      lightboxImg.alt = item.caption || 'Фото';
+      lightboxCaption.textContent = item.caption || '';
+      lightboxCaption.style.display = item.caption ? 'block' : 'none';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // ═══════════════════════════════════════
+    // Modal (white popup)
+    // ═══════════════════════════════════════
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalBody = document.getElementById('modalBody');
+    const modalClose = document.getElementById('modalClose');
+
+    // Modal content data
+    const modalData = {
+      medicine: {
+        title: 'Медицинские проекты',
+        type: 'list',
+        items: [
+          'Евразийский ортопедический форум (опухоли костей, комплексная ортопедическая реабилитация, политравма и др.) (2021, 2019)',
+          'XIII Научно-практическая конференция «Актуальные вопросы флебологии» (2021)',
+          'Второй всероссийский научно-образовательный форум «Кардиология XXI века: альянсы и потенциал» (2021)',
+          '«Молекулярная диагностика и биобезопасность 2021. COVID-2019: эпидемиология, диагностика, профилактика», мероприятие Роспотребнадзора',
+          '«Современные подходы в лечении острых и хронических нарушений мозгового кровообращения», медицинская школа ЕМС (2021)',
+          '«Оптимизация диагностики и терапии рецидивов нейробластомы группы высокого риска», НМИЦ ДГОИ им. Дмитрия Рогачева (2021)',
+          'Первый национальный конгресс по эндосонографии (2020)',
+          'Практикум по иммунофенотипированию онкогематологических заболеваний (2020)',
+          'Онлайн-конференция «Биодеградируемые импланты в детской травматологии, современные способы лечения» (2020)',
+          'XII Плужниковские чтения (оториноларингология) (2020)',
+          'IV Европейский конгресс по эстетической и лазерной медицине ECALM 2020',
+          'IV Форум «Ошибки, опасности и осложнения в анестезиологии и реаниматологии» (2020)',
+          'Конференция «Критическая ишемия нижних конечностей» (2019)',
+          'XVI Европейский психологический конгресс (тревожные расстройства, КПТ, суицидальное поведение, военная и экстремальная психология) (2019)',
+          'XII международная конференция «Российская школа колоректальной хирургии» (2019)',
+          'Международная конференция «Вакуумная терапия ран у детей и взрослых: российский и международный опыт» (2018)',
+          'Международная научно-практическая конференция «Ядерная медицина и лучевая терапия: современное состояние и ближайшие перспективы» (2017)',
+          'Международная научная конференция «Клиническая протеомика. Постгеномная медицина» (2017)'
+        ]
+      },
+      international: {
+        title: 'Международные организации, крупные форумы',
+        type: 'list',
+        items: [
+          'IX Московская конференция по международной безопасности (2021)',
+          '11-я встреча глав компетентных органов стран-членов ШОС по вопросам борьбы с незаконным оборотом наркотиков (2021)',
+          '«Создание академии инклюзивной охраны природы: консультация для Африки, России и Арктики», Всемирный фонд дикой природы (WWF) (2021)',
+          'Форум «Армия-2020»',
+          'Заседание Генеральной ассамблеи ФИДЕ под председательством А. Дворковича (2020)',
+          'Форум «Россия-Африка» (секции «атомные технологии», «образование», «кибербезопасность») (2019)',
+          'Семинар по международным правилам проведения военных операций SWIRMO-2019, проводимый Минобороны России и Международным Комитетом Красного Креста (2019)',
+          'Форум "Россия – страна возможностей" (2018)',
+          'Съезд мэров моногородов (2017)'
+        ]
+      },
+      business: {
+        title: 'Бизнес, экономика, право',
+        type: 'list',
+        items: [
+          'Вебинар «Знакомство с рынками драгоценных металлов России и Китая» (Шанхайская биржа золота) (2021)',
+          'Бизнес-миссия с Марокко (2020)',
+          'Международный онлайн-семинар «Экспорт в страны Африки от А до Я: Ангола, Нигерия, Сенегал» (2020)',
+          'Встреча С.С. Собянина с участниками Экономического совета Франко-российской торгово-промышленной палаты (2019)',
+          'Семинар по предотвращению международного похищения детей, Нижегородский областной суд (2019)',
+          'Конференция «Возврат крупных долгов в России и за рубежом» (2019)',
+          'Заседание нотариальных палат государств Европы (2019)',
+          'Конференция «Бизнес и биоразнообразие», Русское географическое общество (2019)',
+          'XIX Апрельская конференция НИУ ВШЭ (2018)'
+        ]
+      },
+      agriculture: {
+        title: 'Сельское хозяйство, пищевая промышленность',
+        type: 'list',
+        items: [
+          'Торговое шоу AgroChemEx, презентации компаний-производителей средств химической защиты растений (2021)',
+          'Лекция на тему обеспечения санитарных условий при производстве пищевых продуктов животного происхождения (2021)',
+          'Лекция на тему акарицидов (2021)',
+          'Elanco, конференция по итогам 2020 года',
+          'VI Международный Агропромышленный молочный форум (2019)',
+          'Винная выставка Simple Expo (2019)',
+          'Выставка «Мясная промышленность. Куриный король. VIV Russia» (2019)'
+        ]
+      },
+      mining: {
+        title: 'Горное дело',
+        type: 'list',
+        items: [
+          'Тренинг по отбору проб на золото (2021)',
+          'Обсуждение имитационной модели для отслеживания процессов на угольном разрезе и в порту в режиме реального времени (2020)',
+          'Серия интервью с техническими специалистами горных предприятий с целью оценки их навыков и направлений развития (геология, буро-взрывные работы, маркшейдерия, планирование горных работ и т. д.) (2020)',
+          'Командировка на золотодобывающее предприятие в Буркина-Фасо (полное сопровождение технических специалистов – дробилки, ремонтные мастерские, обогатительная фабрика, площадки кучного выщелачивания, карьер и т.д.) (2019)',
+          'Конференция компании «Норникель» (2018)'
+        ]
+      },
+      misc: {
+        title: 'Разное',
+        type: 'list',
+        items: [
+          'Вебинар «Порядок регулирования и проведение GMP инспекций, в том числе в условиях пандемии» (2021)',
+          'Лабораторный инвестиционный форум (2021)',
+          'Сопровождение руководства «Красного гида Мишлен» в Москве (2020-2021)',
+          'Совместный семинар Росэнергоатома и EDF (Франция) на тему пассивных систем безопасности на АЭС и осмотр испытательных стендов (2019)',
+          'Заседание российско-французской рабочей группы по информационным технологиям, связи и сотрудничеству в области цифрового телерадиовещания под председательством заместителя министра цифрового развития, связи и массовых коммуникаций РФ М. Мамонова (2019)',
+          'Оценка проектов «МСФО9», «Операционный центр информационной безопасности, SOC», «Эверест» Сбербанка в рамках участия в конкурсе Международной ассоциации управления проектами (2018-2019)',
+          'Форум по торговой недвижимости MAPIC Russia (2018-2019)',
+          '«Отношение русского писателя к власти», встреча с Н.Д. Солженицыной (2018)'
+        ]
+      },
+      videos: {
+        title: 'Ссылки на видео с моим переводом',
+        type: 'links',
+        items: [
+          { text: 'Выступление генерального секретаря ООН Антониу Гутерриша на IX Московской конференции по международной безопасности', url: 'https://www.youtube.com/watch?v=t2-_cYHcV-I' },
+          { text: 'Выступление секретаря Совета безопасности Российской Федерации генерала армии Николая Патрушева', url: 'https://disk.yandex.ru/d/xAttu-qwzNi-xA/2021-06-24/%D0%92%D1%8B%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F/422%20-%20%D0%9D.%D0%9F.%20%D0%9F%D0%B0%D1%82%D1%80%D1%83%D1%88%D0%B5%D0%B2%20-%20%D1%81%D0%B5%D0%BA%D1%80%D0%B5%D1%82%D0%B0%D1%80%D1%8C%20%D0%A1%D0%BE%D0%B2%D0%91%D0%B5%D0%B7%20%D0%A0%D0%A4%20-%20%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D0%B8%CC%86%D1%81%D0%BA%D0%B8%D0%B8%CC%86.mp4' },
+          { text: 'Выступление генерального секретаря ОБСЕ Хельги Марии Шмид', url: 'https://www.youtube.com/watch?v=6C5iMmh58Z4&t=374s' },
+          { text: 'Выступление премьер-министра Народной Республики Бангладеш Шейха Хасины', url: 'https://www.youtube.com/watch?v=V2NhzmU1Pn4&t=3032s' },
+          { text: 'Массаж и магнитная терапия для лошади, вебинар', url: 'https://www.youtube.com/watch?v=GSB5Tu0lPDo' },
+          { text: 'Кормовые добавки в рационе спортивной лошади, вебинар', url: 'https://www.youtube.com/watch?v=u-t1vCPUE-M' }
+        ]
+      },
+      thanks: {
+        title: 'Благодарности',
+        type: 'gallery',
+        images: [
+          'images/thanks-big-1.jpg',
+          'images/thanks-big-2.jpeg',
+          'images/thanks-big-3.jpg'
+        ]
+      },
+      diplomas: {
+        title: 'Дипломы и сертификаты',
+        type: 'gallery',
+        images: [
+          'images/diploma-big-01.jpg',
+          'images/diploma-big-02.jpg',
+          'images/diploma-big-03.jpg',
+          'images/diploma-big-04.jpg',
+          'images/diploma-big-05.jpg',
+          'images/diploma-big-06.png',
+          'images/diploma-big-07.jpg',
+          'images/diploma-big-08.jpg',
+          'images/diploma-big-09.jpg',
+          'images/diploma-big-10.png'
+        ]
+      },
+      clients: {
+        title: 'Информация для заказчиков',
+        type: 'article'
+      }
+    };
+
+    function openModal(key) {
+      const data = modalData[key];
+      if (!data) return;
+
+      let html = '<h3>' + data.title + '</h3>';
+
+      if (data.type === 'list') {
+        html += '<ul>';
+        data.items.forEach(item => {
+          html += '<li>' + item + '</li>';
+        });
+        html += '</ul>';
+      }
+
+      else if (data.type === 'links') {
+        html += '<ul>';
+        data.items.forEach(item => {
+          html += '<li><a href="' + item.url + '" target="_blank" rel="noopener">' + item.text + '</a></li>';
+        });
+        html += '</ul>';
+      }
+
+      else if (data.type === 'gallery') {
+        html += '<div class="modal-thumbs-grid" id="modalThumbsGrid">';
+        data.images.forEach((src, i) => {
+          html += '<div class="modal-thumb" onclick="expandModalImage(\'' + src + '\', ' + i + ')">';
+          html += '<img src="' + src + '" alt="' + data.title + ' ' + (i + 1) + '" loading="lazy">';
+          html += '</div>';
+        });
+        html += '</div>';
+        html += '<div class="modal-expanded-wrapper" id="modalExpanded">';
+        html += '<img src="" alt="" id="modalExpandedImg">';
+        html += '<br><span class="modal-expanded-back" onclick="collapseModalImage()">← Назад к миниатюрам</span>';
+        html += '</div>';
+      }
+
+      else if (data.type === 'article') {
+        html += getClientsArticleHTML();
+      }
+
+      modalBody.innerHTML = html;
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function expandModalImage(src, index) {
+      const grid = document.getElementById('modalThumbsGrid');
+      const expanded = document.getElementById('modalExpanded');
+      const expandedImg = document.getElementById('modalExpandedImg');
+
+      grid.style.display = 'none';
+      expandedImg.src = src;
+      expanded.classList.add('active');
+    }
+
+    function collapseModalImage() {
+      const grid = document.getElementById('modalThumbsGrid');
+      const expanded = document.getElementById('modalExpanded');
+
+      expanded.classList.remove('active');
+      grid.style.display = '';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      modalBody.innerHTML = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    // Close modals with Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (lightbox.classList.contains('active')) closeLightbox();
+        if (modalOverlay.classList.contains('active')) closeModal();
+      }
+    });
+
+    // Clients article content
+    function getClientsArticleHTML() {
+      return `
+        <p>3 простых правила для выступающих, которые облегчат – или, скорее, не затруднят там, где это не оправдано – устный перевод и, как результат, помогут сделать перевод максимально удобным и приятным для слушателей:</p>
+
+        <h4>1. Использование микрофона/гарнитуры и стабильный интернет</h4>
+
+        <p>Если мероприятие проводится онлайн, то всем выступающим необходимо использовать гарнитуру/микрофон. Плохой звук – бич нашей онлайн-эпохи, а требования к качеству звука для переводчика гораздо выше, чем для пассивного слушателя, ведь ему нужно не просто понять какой-то общий размытый смысл, а действительно разобрать все слова. Простая истина заключается в том, что перевести можно только то, что физически услышал. Рассеянный звук и эффект эха иногда приводят к тому, что переводчику крайне сложно понять даже выступающего на его родном языке – из-за плохой связи или звука теряются (просто полностью выпадают, да) факты, цифры, имена – а ведь в этом зачастую и состоит вся соль общения. По этой же причине крайне затруднительно переводить речь выступающих, находящихся в одной переговорной и говорящих в один микрофон, находящийся от них на большом расстоянии.</p>
+
+        <p>Самое важное, что здесь нужно понимать, - это то, что восприятие речи пассивным слушателем и активным слушателем (=переводчиком) очень разное. Мы сами не всегда это осознаём, но когда мы пассивно слушаем то, что сами не до конца понимаем, наш мозг всё равно так или иначе помогает нам достроить картинку, он пытается, как может, решить эту проблему неопределённости. В голове появляются некие немного туманные, немного смутные образы, и создаётся иллюзия (да, именно иллюзия) понимания. Этот феномен имеет место, когда мы слушаем речь на каком-нибудь славянском языке – такие знакомые слова, что-то такое родное, и если просто слушать, то кажется, что понимаешь, но вот попробуй хотя бы очень упрощённо передать смысл – не получится. То же самое происходит, когда мы слушаем речь на иностранном языке, которым мы владеем не так хорошо, как нам кажется, и когда за речью сразу же следует перевод. Понимание отдельных фрагментов вкупе с чётким переводом творят чудеса, мы совершенно искренне думаем: «Да мой (например) английский очень даже ничего, а я переживал(а)!» Но вот перевод останавливается, теперь звучит только иностранная речь, и какой-нибудь коллега у нас спрашивает: «Слушай, о чём там речь? Я вообще ничего не понимаю, я в школе немецкий учил». И вдруг неожиданно оказывается, что, вроде как, всё было понятно, но рассказать в двух словах суть всё равно почему-то не получается. Почему так происходит? Потому что это была та самая иллюзия понимания, потому что в голове парили некие образы, но они были во многом просто миражом. Переводчику же недостаточно смутных образов, потому что он находится в активной роли, и ему нужно как раз-таки передать услышанное. Переводчику абсолютно необходимо слышать чёткую речь без пропуска слов, которые не долетели из-за плохой связи или рассеянного звука!</p>
+
+        <p>Важно понимать, что выступающие и переводчики – это одна команда, ведь от того, насколько хорошо переводчики воспринимают речь выступающих, напрямую зависит то, насколько хорошо воспримут этот текст конечные потребители перевода, а значит, настолько хорошо будет достигнута цель переговоров/вебинара/презентации и т.д. А ведь смысл всего происходящего, смысл всех затраченных ресурсов, времени, усилий именно в этом. Это важный вопрос, пожалуйста, отнеситесь к нему серьёзно, если хотите, чтобы ваши слова действительно были в полном объёме донесены до конечного адресата.</p>
+
+        <h4>2. Адекватный темп речи</h4>
+
+        <p>Темп речи выступающего не должен быть слишком быстрым, по возможности речь должна быть с логическими паузами и акцентами. Выступающему не стоит проверять способность переводчика угнаться за тысячью слов в минуту, мы снова возвращаемся к тому, что всё-таки цель любого выступления – это действительно донести до аудитории какие-то идеи и мысли. Я всегда предлагаю провести такой эксперимент: включить какое-нибудь видео на родном языке с речью в (очень) быстром темпе и попробовать повторять текст слово в слово за выступающим в течение хотя бы 10 минут. Думаю, многие будут удивлены тому, насколько сложной окажется эта задача и какое количество текста в конечном итоге потеряется. А ведь это просто бездумное повторение речи на родном языке, переводчики же должны при этом также анализировать и перерабатывать сказанное и перелагать это на другой язык, у которого может быть совершенно иная внутренняя логика.</p>
+
+        <p>Выступающий и переводчик заведомо находятся в неравном положении. Во-первых, выступающий, как правило, презентует свою «родную» тему – тему, с которой он много и плотно работает и понимание которой у него находится на очень высоком уровне, переводчик же работает с разными областями знаний и к каждой конкретной теме готовится отдельно. Во-вторых, это нам только кажется, что наша речь спонтанна. Перед тем, как что-то сказать, мы подсознательно проделываем определённую работу, мы формулируем мысль, хотя и не осознаём этого. Фраза, сказанная выступающим, уже прошла определённый путь, она является конечным продуктом некоего процесса. Переводчик же, слыша её, получает её «в лоб», потому что эта фраза чужая, а не его собственная, и процесс переработки у него начинается с нуля. Вот почему, когда выступающий говорит неоправданно быстро, он тем самым ставит переводчика в заведомо уязвимое положение, что, в конечном итоге, может привести к неоптимальному качеству перевода, а значит, к неполному объёму донесения информации до слушателей.</p>
+
+        <p>По возможности нужно расшифровывать аббревиатуры, особенно необщепринятые, ведь в каждой компании они могут быть свои, неизвестные переводчикам и сторонним слушателям.</p>
+
+        <p>Не стоит читать текст по бумажке, письменная и устная речь – это два разных жанра, с разной организацией, построением предложений и логикой. Показательная ситуация – моя работа синхронно на одном мероприятии по сложной юридической теме на французском языке. Одна из выступающих, француженка, вышла и стала по бумажке в невероятном темпе зачитывать какие-то законодательные акты, написанные канцелярским языком. Я, мобилизовав все свои ресурсы, переводила, и в голове моей обрывками проносились следующие мысли: «Зачем? Зачем?.. Ладно бы ещё это было на английском языке, самом распространённом и универсальном, тогда можно было бы предположить, что хотя бы кто-то из аудитории может, не прибегая к переводу, понять, о чём речь. Но в данном конкретном случае выступающую во всём зале понимают исключительно я и моя коллега, и если не поймём мы – не поймёт никто, так зачем максимально усложнять нашу задачу?..» К слову, мы тогда хорошо справились с переводом, но работали на пределе, и сколько на это ушло нервных клеток и интеллектуального ресурса, страшно представить, а самое главное, не очень понятно, для чего нужно было подвергать нас таким перегрузкам, а значит, в конечном итоге, рисковать тем, что бόльшая часть смысла доклада до адресатов просто бы не дошла.</p>
+
+        <h4>3. Предоставление переводчикам материалов</h4>
+
+        <p>Переводчикам нужны материалы для подготовки, особенно если тема не общая, а специфическая. «Вы же переводчик, зачем вам материалы, просто переводите. Услышали слово – перевели, услышали следующее - перевели». Эх, если бы всё было так просто!</p>
+
+        <p>Ведь никому же не придёт в голову привести хирурга в случайную операционную и сказать: «Ну, Иван Иванович, оперируйте». «Как так, «оперируйте»?» - совершенно резонно воскликнет Иван Иванович. «Что мне оперировать, руку или ногу? Что у человека в анамнезе? Дайте мне рентгенограмму! Дайте мне сканы КТ/МРТ!» «Иван Иванович, ну ей-богу, вы же профессионал, хирург – вот и оперируйте. Только вот прямо сразу оперируйте, времени осматриваться, знаете ли, нет». Смешно и нелепо, да? Но почему-то в отношении переводчиков такие стереотипы применяются с печальной регулярностью. А ведь аналогия прямая.</p>
+
+        <p>Все существующие профессиональные сферы просто не перечесть, и когда на прошлой неделе ты переводил про ворсины хориона, на этой – про кучное выщелачивание, а на следующей – про ногавки и грызла, то глубокое знание темы и терминологии имеет решающее значение. Конечно, заранее зная тему, кое-что можно найти в свободном доступе в интернете, но ведь никто не знает лучше и глубже тонкости именно своих выступлений, чем сами выступающие. Переводчику также важно заранее получить список участников с названиями компаний и должностей и заранее ознакомиться с необщепринятыми аббревиатурами и специфическими моментами. Здесь всё просто: чем больше актуальных материалов – тем лучше подготовка переводчика, чем лучше подготовка – тем лучше перевод, а значит, коммуникация между выступающими и аудиторией состоялась, и мероприятие было проведено не зря. Уделите заранее некоторое время переводчику, и это время окупится сторицей.</p>
+
+        <p>Соблюдение этих простых правил будет способствовать наилучшему донесению информации до получателей перевода, проверено! И ещё раз, работа выступающего и переводчика – это действительно командная работа, это работа в одной связке, и цель у нас общая – чтобы слушатель в полном объёме и максимально бесшовно понял, о чём речь. Поверьте, хорошему переводчику тоже не всё равно, он тоже заинтересован в том, чтобы качественно и профессионально выполнять свою работу и чувствовать от неё удовлетворение. И переводчик так же имеет полное право испытывать некоторое негодование, если его лишили этого чувства, бросив на амбразуру перевода в пулемётном темпе по неочевидной теме без подготовки и с таким качеством связи, при котором теряется половина всей информации. Как показывает опыт, при адекватной подготовке переводчика и при искреннем желании выступающего быть понятым возможно качественное донесение самой сложной, витиеватой и неоднозначной темы.</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
